@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:vendure:server": "ts-node ./src/index.ts",
-    "dev:vendure:worker": "ts-node ./src/index-worker.ts",
-    "dev:vendure": "concurrently npm:dev:vendure:*",
+    "dev:vendure:server": "ts-node ./src/vendure/index.ts",
+    "dev:vendure:worker": "ts-node ./src/vendure/index-worker.ts",
+    "dev:vendure": "concurrently \"npx tailwindcss build -i src/vendure/styles/extensions.scss -o src/vendure/styles/extensions-output.scss\" npm:dev:vendure:*",
     "build": "tsc",
     "start:vendure:server": "node ./dist/index.js",
     "start:vendure:worker": "node ./dist/index-worker.js",
@@ -15,12 +15,22 @@
     "migration:revert": "ts-node migration revert"
   },
   "dependencies": {
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@vendure/admin-ui": "^2.1.0",
     "@vendure/admin-ui-plugin": "2.1.0",
     "@vendure/asset-server-plugin": "2.1.0",
     "@vendure/core": "2.1.0",
     "@vendure/email-plugin": "2.1.0",
+    "@vendure/ui-devkit": "^2.1.0",
     "better-sqlite3": "9.0.0",
     "dotenv": "16.3.1",
+    "graphql-tag": "^2.12.6",
+    "next": "^13.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3",
     "typescript": "4.9.5"
   },
   "devDependencies": {

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.giftForm {
+  display: flex;
+  gap: 1rem;
+}
+
+.giftStoreContainer {
+  .vdr-action-bar {
+    align-items: flex-end;
+  }
+}
